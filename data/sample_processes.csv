@@ -1,0 +1,6 @@
+pid,arrival_time,burst_time,priority,memory_required
+P1,0,6,2,40
+P2,1,8,1,30
+P3,2,7,3,20
+P4,3,3,4,15
+P5,5,4,2,25
