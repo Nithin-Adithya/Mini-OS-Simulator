@@ -14,10 +14,10 @@ An interactive, educational simulator demonstrating how operating systems manage
 │                  HTTP / JSON                    │
 ├─────────────────────────────────────────────────┤
 │           FastAPI Backend (api.py)              │
-├───────┬───────┬───────┬────────┬───────────────┤
-│Process│Sched- │Metrics│Memory  │Deadlock       │
-│Manager│uler   │       │Manager │Detector       │
-└───────┴───────┴───────┴────────┴───────────────┘
+├───────┬───────┬───────┬────────┬────────────────┤
+│Process│Sched- │Metrics│Memory  │Deadlock        │
+│Manager│uler   │       │Manager │Detector        │
+└───────┴───────┴───────┴────────┴────────────────┘
 │   cli.py (standalone CLI mode)                  │
 └─────────────────────────────────────────────────┘
 ```
