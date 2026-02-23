@@ -34,10 +34,13 @@ def setup_logging() -> logging.Logger:
     console.setFormatter(logging.Formatter(LOG_FORMAT))
     logger.addHandler(console)
 
-    # File handler
-    file_handler = logging.FileHandler(LOG_FILE, mode="a", encoding="utf-8")
-    file_handler.setFormatter(logging.Formatter(LOG_FORMAT))
-    logger.addHandler(file_handler)
+    # File handler — skip on read-only filesystems (e.g. Vercel serverless)
+    try:
+        file_handler = logging.FileHandler(LOG_FILE, mode="a", encoding="utf-8")
+        file_handler.setFormatter(logging.Formatter(LOG_FORMAT))
+        logger.addHandler(file_handler)
+    except OSError:
+        logger.debug("File logging disabled (read-only filesystem)")
 
     return logger
 
