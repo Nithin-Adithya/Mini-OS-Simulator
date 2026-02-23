@@ -17,5 +17,11 @@ dist/
 .DS_Store
 Thumbs.db
 
+# Vercel
+.vercel/
+
+# Virtual env
+.venv/
+
 # Logs
 *.log
