@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BarChart3, Play } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, CartesianGrid } from 'recharts';
 import ProcessForm from '../components/ProcessForm';
@@ -11,6 +11,7 @@ const LABELS = { 'avg_waiting_time': 'Avg WT', 'avg_turnaround_time': 'Avg TAT',
  * ComparisonPage - Runs all 4 scheduling algorithms and shows grouped bar charts.
  */
 export default function ComparisonPage() {
+    useEffect(() => { document.title = 'OS Simulator | Comparison'; }, []);
     const [processes, setProcesses] = useState([]);
     const [quantum, setQuantum] = useState(2);
     const [result, setResult] = useState(null);

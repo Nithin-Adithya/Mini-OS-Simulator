@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Play } from 'lucide-react';
 import ProcessForm from '../components/ProcessForm';
 import GanttChart from '../components/GanttChart';
@@ -9,6 +9,7 @@ import { runScheduling } from '../api';
  * SchedulingPage - Process input, algorithm selection, Gantt chart + metrics.
  */
 export default function SchedulingPage() {
+    useEffect(() => { document.title = 'OS Simulator | CPU Scheduling'; }, []);
     const [processes, setProcesses] = useState([]);
     const [algorithm, setAlgorithm] = useState('fcfs');
     const [quantum, setQuantum] = useState(2);

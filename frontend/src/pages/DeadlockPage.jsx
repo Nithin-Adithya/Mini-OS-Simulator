@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Plus, Trash2, Search, AlertTriangle, ShieldCheck } from 'lucide-react';
 import { detectDeadlock } from '../api';
 
@@ -6,6 +6,7 @@ import { detectDeadlock } from '../api';
  * DeadlockPage - Interactive RAG builder with cycle detection.
  */
 export default function DeadlockPage() {
+    useEffect(() => { document.title = 'OS Simulator | Deadlock Detection'; }, []);
     const [processes, setProcesses] = useState(['P1', 'P2', 'P3']);
     const [resources, setResources] = useState([{ id: 'R1', instances: 1 }, { id: 'R2', instances: 1 }]);
     const [requests, setRequests] = useState([]);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Download, Play, BarChart3 } from 'lucide-react';
 import ProcessForm from '../components/ProcessForm';
 import { compareAlgorithms, compareMemory } from '../api';
@@ -7,6 +7,7 @@ import { compareAlgorithms, compareMemory } from '../api';
  * ReportsPage - Export simulation results as CSV and view logs.
  */
 export default function ReportsPage() {
+    useEffect(() => { document.title = 'OS Simulator | Reports'; }, []);
     const [processes, setProcesses] = useState([]);
     const [quantum, setQuantum] = useState(2);
     const [schedResult, setSchedResult] = useState(null);

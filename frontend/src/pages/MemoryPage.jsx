@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Play, BarChart3 } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Cell } from 'recharts';
 import MemoryGrid from '../components/MemoryGrid';
@@ -10,6 +10,7 @@ const ALGO_COLORS = { FIFO: '#5b8a72', LRU: '#6b8aaf', OPTIMAL: '#8b7a9e' };
  * MemoryPage - Page replacement simulation with frame visualization and comparison.
  */
 export default function MemoryPage() {
+    useEffect(() => { document.title = 'OS Simulator | Memory Management'; }, []);
     const [refString, setRefString] = useState('7,0,1,2,0,3,0,4,2,3,0,3,2');
     const [numFrames, setNumFrames] = useState(3);
     const [algorithm, setAlgorithm] = useState('fifo');
